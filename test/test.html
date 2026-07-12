@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Grid + glow background demo</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    font-family: -apple-system, "Segoe UI", sans-serif;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+
+    /* Base dark color */
+    background-color: #07070c;
+  }
+
+  /* LAYER 1: the square grid, made from two thin repeating linear-gradients */
+  .grid-layer {
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(238, 233, 233, 0.18) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+  }
+
+  /* LAYER 2: the soft colored glow blobs, made from radial-gradients + blur */
+  .glow-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      radial-gradient(circle at 15% 25%, rgba(124, 58, 237, 0.45), transparent 40%),
+      radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.35), transparent 40%),
+      radial-gradient(circle at 50% 85%, rgba(20, 184, 166, 0.35), transparent 45%);
+    filter: blur(40px);
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  h1 span { color: #a78bfa; }
+
+  p {
+    color: #b3b3bd;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  code {
+    display: block;
+    text-align: left;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 13px;
+    white-space: pre-wrap;
+    color: #9be8d8;
+  }
+</style>
+</head>
+<body>
+
+  <div class="grid-layer"></div>
+  <div class="glow-layer"></div>
+
+  <div class="content">
+    <h1>Hi, I'm <span>Ashesh</span>.</h1>
+    <p>This whole background is 3 stacked CSS layers: a dark base color, a repeating grid-line gradient, and a few blurred radial-gradient glow blobs. No images used anywhere.</p>
+
+    <code>background-color: #07070c;
+
+/* grid */
+background-image:
+  linear-gradient(rgba(255,255,255,.06) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,.06) 1px, transparent 1px);
+background-size: 40px 40px;
+
+/* glow (separate layer, blurred) */
+background-image:
+  radial-gradient(circle at 15% 25%, rgba(124,58,237,.45), transparent 40%),
+  radial-gradient(circle at 85% 15%, rgba(59,130,246,.35), transparent 40%),
+  radial-gradient(circle at 50% 85%, rgba(20,184,166,.35), transparent 45%);
+filter: blur(40px);</code>
+  </div>
+
+</body>
+</html>
