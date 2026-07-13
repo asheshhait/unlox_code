@@ -138,6 +138,7 @@ main {
   /* background-color: #fff; */
   gap: 27px;
   padding: 8px 35px;
+  text-align: center;
 }
 .span-border {
   background-color: #a7a4a475;
@@ -157,97 +158,121 @@ main {
 .hero p {
   font-size: 18px;
 }
-.skill-frame {
-  display: grid;
-  grid-template-columns: 2fr 2fr;
-  grid-template-rows: 3fr 3fr;
-  margin-top: 30px;
-  padding: 40px 0px;
-  gap: 40px;
-  
-}
-.skill {
-  background-color: #5a5a5a5b;
-  height: 440px;
-  border-radius: 40px;
-  padding: 20px 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.project-card {
+  width: 600px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;   /* rounds the whole card, including the image corners via overflow:hidden */
+  overflow: hidden;
+  background: #0c0c14;
 }
 
-
-.programing{
-  display: flex;
-  justify-content: space-between;
-  /* background-color: #fff; */
-}
-.progress{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  
-  /* background-color: #fff; */
-}
-.language{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  
-
-}
-.language progress{
+.project-card img {
   width: 100%;
-}
-progress {
-    width: 250px;
-    height: 8px;
-    appearance: none;
-    -webkit-appearance: none;
+  height: 360px;
+  object-fit: cover;     /* crops the image to fill the box without distorting it */
 }
 
-progress::-webkit-progress-bar {
-    background: #2b2b35;
-    border-radius: 999px;
+.project-card .tags span {
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 14px;
+  border-radius: 999px;  /* pill shape for each tag */
 }
+.project-all{
+    display: flex;
+    flex-direction: column;
+    gap:40px;
 
-progress::-webkit-progress-value {
-    background: linear-gradient(90deg, #a78bfa, #38bdf8);
-    border-radius: 999px;
 }
-.name{
+.body-card{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 10px;
+}
+.work-project{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+.heading-kit a{
+    color: #9c9ca8;
+    text-decoration: none;
+}
+.consistancy{
+    /* background-color: #fff; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+    gap: 16px;
+    border: 0.03px solid rgba(255, 255, 255, 0.137);
+    border-radius: 20px;
+    padding: 0px 20px;
+    max-height: 38vh;
+}
+.img-git{
+    /* background-color: #fff; */
+    width: 65vw;
+    height: 22vh;
+}
+.navbar{
   display: flex;
+  /* height:70px; */
   justify-content: space-between;
+  margin-top: 40px;
+  padding: 30px 50px;
+  /* background-color: #ffffff1f; */
 }
-.also-know{
-  min-height: 180px;
+.left-nav{
   display: flex;
-  flex-direction: column;
-  
-  /* justify-content: center; */
-  gap: 38px;
-  background-color: #807e7e52;
-  padding: 20px;
-  border-radius: 30px;
-  text-align: center;
-  
-}
-.also-know span{
-  background-color: #6e6c6c75;
-  padding: 5px 26px;
-  border-radius: 40px;
+  gap: 20px;
 
-}
-.known-skil{
-  display: flex;
-  gap: 30px;
-  align-items: center;
-  justify-content: center;
   /* background-color: #fff; */
-  padding: 0px 80px;
-  flex-wrap: wrap;
 }
-/* ---------- FOOTER ---------- */
+.project-type{
+  
+  border-radius: 40px;
+  background-color: #ffffff2f;
+  text-align: center;
+  padding: 9px 17px;
+}
+.search input{
+height: 30PX;
+width: 240px;
+border-radius: 20px;
+padding: 0px 10px;
+}
+.all-project {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    gap: 30px;
+    padding: 20px 35px;
+}
+
+.project-single {
+    background-color: #b9b9b946;
+    min-height: 450px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.project-single img{
+  width: 100%;
+  height: 290px;
+  object-fit: cover; 
+}
+.project-single .tags span {
+  font-size: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 14px;
+  border-radius: 999px;  /* pill shape for each tag */
+}
+.always{
+  background: linear-gradient(135deg, #7c3aed, #3b82f6);
+}
+
+ /* ---------- FOOTER ---------- */
   footer {
     position: relative;
     z-index: 2;
